@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Eagle Academy — Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <div class="brand">
+      <a href="index.html">
+        <img src="logo.jpg" alt="Eagle Academy" class="brand-logo" />
+        <span class="visually-hidden">Eagle Academy</span>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-controls="navMenu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav" id="navMenu">
+      <a class="active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Building Skills, Creating Careers</h1>
+      <p>Coaching and Training with Placement Support — Online & Offline.</p>
+      <div style="margin-top:16px">
+        <a class="btn btn-primary" href="contact.html">Join Us</a>
+        <a class="btn btn-accent" href="courses.html" style="margin-left:8px;">Know More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container cards">
+    <article class="card">
+      <h3>Courses</h3>
+      <p>Banking, Soft Skills & Placements. Weekday & weekend batches.</p>
+      <a class="btn btn-primary" href="courses.html">View Courses</a>
+    </article>
+    <article class="card">
+      <h3>Admissions</h3>
+      <p>Register online. Upload documents. Pay online or at center.</p>
+    </article>
+    <article class="card">
+      <h3>Placements</h3>
+      <p>Resume polish, mock interviews, and placement assistance.</p>
+      <a class="btn btn-primary" href="about.html">Learn More</a>
+    </article>
+  </section>
+
+  <section class="section container">
+    <h2>Announcements</h2>
+    <div class="notice" style="margin-bottom:10px;">✨ New branch opened in Bengaluru! Admissions open now.</div>
+    <div class="notice">📢 Upcoming Workshop: Resume Building on 10-Oct-2025 — Register Now!</div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand">Eagle Academy</div>
+      <p>Building Skills, Creating Careers.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>+91 8105831142 · +91 9980273688</p>
+      <p>Eagle Academy, 18, 20th Main, Mahakavi Kuvempu Rd, Bengaluru, 560010, KA, IN</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="admissions.html">Register Online</a></p>
+      <p><a href="courses.html">Courses & Fees</a></p>
+    </div>
+  </div>
+</footer>
+<script src="../JavaScript/script.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    var hamburger = document.getElementById('hamburger');
+    var navMenu = document.getElementById('navMenu');
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', function(){
+        var isOpen = navMenu.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      navMenu.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          if (navMenu.classList.contains('open')) {
+            navMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+  });
+</script>

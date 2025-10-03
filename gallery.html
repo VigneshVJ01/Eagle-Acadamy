@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Eagle Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <a href="index.html">
+          <img src="logo.jpg" alt="Eagle Academy" class="brand-logo" />
+          <span class="visually-hidden">Eagle Academy</span>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-controls="navMenu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="events.html">Events</a>
+        <a class="active" href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero small">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>Photos from classes, events, and placement drives.</p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="gallery-grid">
+        <img src="gallary-image1.jpg" alt="Classroom session" />
+        <img src="gallary-image2.jpg" alt="Workshop" />
+        <img src="gallary-image3.jpg" alt="Placement drive" />
+        <img src="gallary-image4.jpg" alt="Team discussion" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">Eagle Academy</div>
+        <p>Building Skills, Creating Careers.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>+91 8105831142 · +91 9980273688</p>
+        <p>Eagle Academy, 18, 20th Main, Mahakavi Kuvempu Rd, Bengaluru, 560010, KA, IN</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="admissions.html">Register Online</a></p>
+        <p><a href="courses.html">Courses & Fees</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../JavaScript/script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var hamburger = document.getElementById('hamburger');
+      var navMenu = document.getElementById('navMenu');
+      if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function(){
+          var isOpen = navMenu.classList.toggle('open');
+          hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        navMenu.querySelectorAll('a').forEach(function(a){
+          a.addEventListener('click', function(){
+            if (navMenu.classList.contains('open')) {
+              navMenu.classList.remove('open');
+              hamburger.setAttribute('aria-expanded', 'false');
+            }
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
